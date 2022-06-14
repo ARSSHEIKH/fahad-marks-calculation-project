@@ -2,14 +2,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect, useState } from 'react';
 import Card from '../Card';
 
-    let temp_totalMarks = [];
+let temp_totalMarks = [];
 function Table() {
 
     const [subject1, setSubject1] = useState([0, 0, 0, 0]);
     const [subject2, setSubject2] = useState([0, 0, 0, 0]);
     const [subject3, setSubject3] = useState([0, 0, 0, 0]);
     const [subject4, setSubject4] = useState([0, 0, 0, 0]);
-    const [totalMarks, setTotalMarks] = useState([0,0]);
+    const [totalMarks, setTotalMarks] = useState([0, 0]);
 
     const handleChange = (subject_name, row_no) => (e) => {
         if (subject_name === "subject1") {
@@ -35,9 +35,9 @@ function Table() {
     }
 
     useEffect(() => {
-            temp_totalMarks[0] = eval(`+ ${subject1[0]} + ${subject2[0]} + ${subject3[0]} + ${subject4[0]}`)
-            console.log("temp_totalMarks", temp_totalMarks)
-       
+        temp_totalMarks[0] = eval(`+ ${subject1[0]} + ${subject2[0]} + ${subject3[0]} + ${subject4[0]}`)
+        console.log("temp_totalMarks", temp_totalMarks)
+
 
     }, [subject1[0], subject2[0], subject3[0], subject4[0]]);
 
@@ -50,12 +50,12 @@ function Table() {
 
     }, [subject1[1], subject2[1], subject3[1], subject4[1]]);
 
-    
-    useEffect=(()=>{
-setTotalMarks(temp_totalMarks);
-    },[temp_totalMarks])
 
-console.log("temp_totalMarks")
+    useEffect = (() => {
+        setTotalMarks(temp_totalMarks);
+    }, [temp_totalMarks])
+
+    console.log("temp_totalMarks")
 
     return (
         <div className="Table">
